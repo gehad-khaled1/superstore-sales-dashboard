@@ -4,7 +4,7 @@
 
 An interactive Excel dashboard that analyzes sales and profit for a retail superstore by product category, region and year, to show **where the business makes money and where it loses margin**.
 
-![Superstore Dashboard Charts](images/dashboard.png)
+![Superstore Dashboard Charts](dashboard.png)
 
 ---
 
