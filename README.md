@@ -24,7 +24,7 @@ Evaluate sales and profit performance across product categories, regions and yea
 
 | Item | Detail |
 |---|---|
-| Source | Superstore sales dataset: `<add dataset link>` |
+| Source | Superstore sales dataset: https://www.kaggle.com/datasets/vivek468/superstore-dataset-final?select=Sample+-+Superstore.csv |
 | Grain | One row per order line |
 | Fields used | Order date, category, region, segment, sales, profit |
 | Currency | USD |
