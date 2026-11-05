@@ -1,22 +1,22 @@
 # Superstore Sales & Profit Dashboard (Excel)
 
-**Tools:** Microsoft Excel · Pivot Tables · Calculated Fields · Slicers · Excel formulas
+**Tools:** Excel (.xlsx) · Pivot Tables · Slicers · Excel formulas
 
-An interactive Excel dashboard that analyzes sales and profit for a retail superstore by product category, region and year, to show **where the business makes money and where it loses margin**.
+An interactive Excel dashboard that analyzes sales and profit for a retail superstore by product category and region, to show **where the business makes money and where it loses margin**.
 
-![Superstore Dashboard Charts](dashboard.png)
+![Superstore Dashboard Charts](images/dashboard.png)
 
 ---
 
 ## 1. Objective
 
-Evaluate sales and profit performance across product categories, regions and years, and turn the findings into practical recommendations for margin improvement and resource allocation.
+Evaluate sales and profit performance across product categories and regions, and turn the findings into practical recommendations for margin improvement and resource allocation.
 
 ### Business questions
 
 1. Which categories and regions generate the most sales and the most profit?
 2. Where is the business selling a lot but earning little (low margin)?
-3. How have yearly sales changed over time?
+3. Which region has the weakest margin?
 
 ---
 
@@ -26,15 +26,16 @@ Evaluate sales and profit performance across product categories, regions and yea
 |---|---|
 | Source | [Superstore sales dataset on Kaggle](https://www.kaggle.com/datasets/vivek468/superstore-dataset-final?select=Sample+-+Superstore.csv) |
 | Grain | One row per order line |
-| Fields used | Order date, category, region, segment, sales, profit |
+| Fields used | Category, region, segment, sales, profit (plus order date, quantity and discount in the data) |
+| Columns added | Year, Cost (sales minus profit), Profit Margin % (profit divided by sales) |
 | Currency | USD |
 
 ---
 
 ## 3. Approach
 
-1. **Data cleaning:** converted the order date into a year field and handled blank entries with Excel formulas (`YEAR`, `IF`, `ISBLANK`).
-2. **Aggregation:** built Pivot Tables for total sales and profit by category, region and year, and added a calculated field for profit margin.
+1. **Data preparation:** created a Year field and handled blank entries with Excel formulas (`YEAR`, `IF`, `ISBLANK`), and added Cost and Profit Margin % columns to the dataset.
+2. **Aggregation:** built Pivot Tables for total sales and profit by category and region.
 3. **Dashboard:** built column and line charts connected to Region and Segment slicers so the whole dashboard filters together.
 4. **Insights:** compared sales against profit margin (profit divided by sales) rather than profit alone.
 
@@ -71,7 +72,6 @@ Evaluate sales and profit performance across product categories, regions and yea
 2. **Furniture sells a lot but earns very little.** It brings in $742K in sales (32% of the total) but only $18K in profit, a 2.5% margin compared with about 17% for Technology and Office Supplies.
 3. **West leads, South is the smallest market.** West has the highest sales and profit. South has the lowest sales, about 17% of the total.
 4. **Central has the weakest margin.** Its 7.9% margin is the lowest of the four regions, despite sales of over $500K.
-5. **Yearly sales peaked in 2018.** Sales rise from about $25K in 2016 to a peak of about $405K in 2018, then fall to about $153K in 2024 before recovering to about $245K in 2025. <!-- Verify the year range against the original Order Date column before publishing; remove this item if the dates are wrong. -->
 
 ---
 
@@ -107,13 +107,14 @@ superstore-sales-dashboard/
 ## 8. How to Use
 
 1. Download `dashboard/Superstore_Dashboard.xlsx`.
-2. Open it in Microsoft Excel (desktop or Excel Online).
-3. Use the **Region** and **Segment** slicers to filter all charts together.
+2. Open it in Microsoft Excel or WPS Spreadsheets.
+3. Go to the **Dashboard** sheet and use the **Region** and **Segment** slicers to filter the charts together.
 
 ## 9. Next Steps
 
 - Add a profit-margin KPI card and a discount analysis for Furniture.
 - Break the analysis down to sub-category and product level.
+- Add a year-over-year analysis using the original order dates.
 - Rebuild the dashboard in Power BI for a more interactive experience.
 
 ---
